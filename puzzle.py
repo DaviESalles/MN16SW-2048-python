@@ -1,6 +1,5 @@
 from tkinter import Frame, Label, CENTER
 import random
-
 import logic
 import constants as c
 
