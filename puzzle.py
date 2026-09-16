@@ -84,12 +84,10 @@ class GameGrid(Frame):
 
     def key_down(self, event):
         key = event.keysym
-        print(event)
         if key == c.KEY_QUIT: exit()
         if key == c.KEY_BACK and len(self.history_matrixs) > 1:
             self.matrix = self.history_matrixs.pop()
             self.update_grid_cells()
-            print('back on step total step:', len(self.history_matrixs))
         elif key in self.commands:
             self.matrix, done = self.commands[key](self.matrix)
             if done:
