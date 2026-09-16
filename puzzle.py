@@ -77,8 +77,10 @@ class GameGrid(Frame):
                 else:
                     self.grid_cells[i][j].configure(
                         text=str(new_number),
-                        bg=c.BACKGROUND_COLOR_DICT[new_number],
-                        fg=c.CELL_COLOR_DICT[new_number]
+                        bg=c.BACKGROUND_COLOR_DICT.get(
+                            new_number, c.BACKGROUND_COLOR_DICT[65536]),
+                        fg=c.CELL_COLOR_DICT.get(
+                            new_number, c.CELL_COLOR_DICT[65536])
                     )
         self.update_idletasks()
 
